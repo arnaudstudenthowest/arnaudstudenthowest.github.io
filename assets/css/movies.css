@@ -1,0 +1,103 @@
+.movie.unknown{
+    background-color:red;
+}
+
+.movie > img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.movie{
+    color:black;
+    display: inline-block;
+    width: 300px;
+    margin: 40px;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: 0.3s;
+}
+.movie:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    color:black;
+}
+.movie:hover p{
+    color: black;
+    transition: 0.5s;
+}
+
+#movieList{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.movieInfo > p{
+    font-size: 1em;
+    padding:10px;
+    color:lightgrey;
+
+}
+.movieInfo > h2{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding:10px;
+    color:black;
+}
+
+#movieSection > h1{
+    margin-left:40px;
+    font-size: 2em;
+}
+#searchFilter{
+    font-size: 1.5em;
+    margin-left: 40px;
+}
+
+#moviePages{
+    display: flex;
+    justify-content: center;
+}
+#moviePages > li{
+    display: inline;
+}
+#moviePages > li > button{
+    width:50px;
+    height:50px;
+    margin:20px;
+    font-size: 2em;
+    border-radius: 15%;
+    border: 3px solid black;
+}
+#moviePages > li > button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+#reset{
+    max-width: 25px;
+    vertical-align: middle;
+}
+#reset:hover{
+    cursor: pointer;
+}
+
+
+.currentMoviePage{
+    background-color: #F15A24;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
