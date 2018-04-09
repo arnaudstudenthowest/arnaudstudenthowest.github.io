@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Arnaud Verpoucke">
+    <title>Chuck It - movies</title>
+    <link rel="stylesheet" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="assets/css/screen.css"/>
+    <link rel="stylesheet" href="assets/css/movies.css"/>
+</head>
+<body>
+<div id="container">
+    <header>
+        <nav>
+            <ul>
+                <li><button id="jokes">JOKES</button></li>
+                <li><a href="index.html"><img src="assets/media/chucknorris_punch_right_small.png"/></a></li>
+                <li><button id="movies" class="currentPage">MOVIES</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <section id="movieSection">
+            <h1>Movies:</h1>
+            <form id="searchFilter">
+                <label for="searchByText">Find: </label><input type="text" placeholder="The Maze Runner" name="searchByText" id="searchByText"/>
+                <input type="submit" name="submit" value="Search"/>
+
+                <img id="reset" src="assets/media/cross_red.png"/>
+            </form>
+            <ul id="movieList">
+
+            </ul>
+            <footer>
+                <ul id="moviePages">
+
+                </ul>
+            </footer>
+        </section>
+
+    </main>
+</div>
+
+<script type="text/javascript" src="assets/js/navigationScript.js"></script>
+<script type="text/javascript" src="assets/js/movieScript.js"></script>
+</body>
+</html>

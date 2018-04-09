@@ -1,0 +1,39 @@
+
+
+main{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width:80%;
+    display: flex;
+    background-color: white;
+    padding:1%;
+
+}
+#poster{
+    align-self: center;
+    width:35%;
+}
+#movieInfo{
+    padding-left:2%;
+}
+#genre > li{
+    display: inline;
+}
+
+
+
+
+
+
+h1{
+    font-size: 3em;
+    font-weight: bold;
+}
+h2{
+    margin-top:20px;
+    font-size: 2em;
+}
+p{
+    font-size: 1em;
+}

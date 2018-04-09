@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech');
+
+body{
+    /*background-color: gainsboro;*/
+    background-image: url("../media/bg_green_dust_scratch_2X.png");
+    background-attachment: fixed;
+    font-family: 'Share Tech','Bahnschrift','Arial', sans-serif;
+}
+header > nav > ul{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+
+
+}
+header > nav > ul > li{
+    line-height: 200px;
+
+}
+header > nav > ul > li > button{
+    background-color: white;
+    border: 3px solid black;
+    margin-top: 60px;
+    width: 200px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: 0.2s;
+    opacity: 0.9;
+
+    vertical-align: middle;
+
+
+}
+header > nav > ul > li >button:first-of-type{
+    /*
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    */
+}
+
+header > nav > ul > li >button:last-of-type{
+    /*
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    */
+}
+
+header > nav > ul img{
+    width: 200px;
+    height: 243px;
+    vertical-align: middle;
+}
+header > nav > ul img:hover{
+    cursor:pointer;
+}
+
+li.currentPage, header > nav > ul > li > button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.currentPage{
+    background-color: #F15A24;
+}
+
+#container:only-child{
+    background-color: blue;
+}
