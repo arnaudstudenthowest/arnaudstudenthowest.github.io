@@ -147,7 +147,7 @@ section > button:hover{
 }
 
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 1080px)
 {
     #jokeList > h2{
         width: 90%;

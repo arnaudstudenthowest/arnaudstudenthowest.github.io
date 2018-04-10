@@ -88,7 +88,7 @@ li.currentPage, header > nav > ul > li > button:hover{
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1080px) {
     #container {
         /*This is mainly used to check if responsiveness is activated.*/
         /*background-color: blue;*/
