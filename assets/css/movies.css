@@ -111,6 +111,25 @@
     #searchFilter {
         text-align: center;
         margin-bottom: 5%;
+        margin-left: auto;
+    }
+    #searchFilter > label{
+        font-size: 2em;
+        vertical-align: middle;
+
+    }
+    #searchByText{
+        width:60%;
+        height: 3em;
+        vertical-align: middle;
+    }
+    #searchFilter > input[type=submit]{
+        width:10%;
+        height: 3em;
+        vertical-align: middle;
+    }
+    #reset{
+        max-width: 50px;
     }
 
 }
