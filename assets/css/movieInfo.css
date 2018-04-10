@@ -4,15 +4,19 @@ main{
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
+    margin-bottom: 2%;
     width:80%;
-    display: flex;
     background-color: white;
     padding:1%;
 
 }
+#movieContent{
+    display:flex;
+}
+
 #poster{
     align-self: center;
-    width:35%;
+    width:30%;
 }
 #movieInfo{
     padding-left:2%;
@@ -21,6 +25,29 @@ main{
     display: inline;
 }
 
+#back{
+    background-color: white;
+    border: 3px solid black;
+    width: 130px;
+    padding-left: 0;
+    padding-right: 15px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: 0.2s;
+    vertical-align: middle;
+    float:right;
+
+
+}
+#back:hover{
+    cursor:pointer;
+    background-color: #F15A24;
+    color:white;
+}
+i{
+    vertical-align: middle;
+}
+.material-icons.md-36 { font-size: 36px; }
 
 
 
@@ -36,4 +63,45 @@ h2{
 }
 p{
     font-size: 1em;
+}
+
+
+
+
+
+@media screen and (max-width: 768px)
+{
+    #movieContent{
+        flex-direction: column;
+    }
+    #poster{
+        width: 80%;
+        align-self: flex-start;
+        margin-bottom: 5%;
+    }
+    #back{
+        width:30%;
+        font-size: 2em;
+    }
+    main{
+        width: 90%;
+    }
+
+
+    h1{
+        font-size: 3.5em;
+        font-weight: bold;
+    }
+    h2{
+        margin-top:20px;
+        font-size: 2.5em;
+    }
+    p{
+        font-size: 1.5em;
+    }
+    #movieContent ul > li{
+        font-size: 1.5em;
+    }
+
+
 }

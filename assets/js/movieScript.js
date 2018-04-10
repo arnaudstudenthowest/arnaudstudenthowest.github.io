@@ -53,9 +53,8 @@ function getMoviesFromAPI(pageToLookup, searchQuery)
         .then(res => res.json())
         .then((out) => {
             totalAmountOfPages = out.total_pages;
-            console.log("fetch, taop:" + totalAmountOfPages);
             movies = out;
-            currentPage = pageToLookup;
+            currentPage = parseInt(pageToLookup);
             putPageButtonsInHTML();
             putMoviesInHTML();
         })
@@ -159,6 +158,7 @@ function putPageButtonsInHTML()
     {
         if (i === currentPage)
         {
+
             html += "<li><button id='moviePage"+i+"' class='currentMoviePage'>"+ i + "</button></li>";
         }
         else
@@ -193,70 +193,3 @@ function saveState()
     localStorage.setItem("lastSpecificSearch", lastSpecificSearch);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function findSpecific(e){
-    e.preventDefault();
-
-    let toFind = document.getElementById("searchByText").value;
-    toFind = toFind.replace(/ +(?= )/g,'').trim().replace(/ /g,"+");
-
-    let url = "https://api.themoviedb.org/3/search/movie?api_key=1ef7b12b0e2643d6271d0ffcd0888469&page=query="+toFind;
-    fetch(url)
-        .then(res => res.json())
-        .then((out) => {
-            totalAmountOfPages = out.total_pages;
-            currentPage = 1;
-            putPageButtonsInHTML();
-            console.log("API data:");
-            console.log(out);
-            movies = out;
-            putMoviesInHTML();
-        })
-        .catch(err => {
-            throw err
-        });
-
-
-
-    console.log(toFind);
-}
-*/

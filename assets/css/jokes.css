@@ -136,3 +136,27 @@ section > button:hover{
     color: white;
 }
 
+.loadingCircle{
+    text-align:center;
+    width:8%;
+    display:block;
+    margin:auto;
+}
+.loadingCircle.hidden{
+    display: none;
+}
+
+
+@media screen and (max-width: 768px)
+{
+    #jokeList > h2{
+        width: 90%;
+    }
+    #categoryField{
+        width:90%;
+    }
+    #categoryField > li{
+        width: 40%;
+    }
+}
+

@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", init());
 function init()
 {
     getMovieInfoFromAPI();
-    document.getElementById("back").addEventListener("click", goBack);
 }
 
 function putMovieInHTML(movieData)
@@ -22,9 +21,9 @@ function putMovieInHTML(movieData)
         imageUrl = "https://image.tmdb.org/t/p/w" + width + movieData.poster_path;
     }
 
-
+    html += "<button id='back'><i class='material-icons md-36'>keyboard_arrow_left</i>BACK</button>";
+    html += "<section id='movieContent'>";
     html += "<img id='poster' src='"+imageUrl+"'/>";
-
     html += "<section id='movieInfo'>";
     html += "<h1 id='title'>" + movieData.title + "</h1>";
     html += "<h2>Genre:</h2>";
@@ -50,9 +49,11 @@ function putMovieInHTML(movieData)
     html += "<p>"+ movieData.release_date +"</p>"
     html += "<h2>Vote average:</h2>";
     html += "<p>"+ movieData.vote_average +"/10</p>"
-    html += "</section>";
+    html += "</section></section>";
+
 
     document.querySelector("main").innerHTML = html;
+    document.getElementById("back").addEventListener("click", goBack);
 }
 
 function getMovieInfoFromAPI()
@@ -67,12 +68,9 @@ function getMovieInfoFromAPI()
     let movieID = pairs[0][1];
     let movieData;
 
-    console.log("retrieving movie information...");
     fetch("https://api.themoviedb.org/3/movie/" + movieID +"?api_key=1ef7b12b0e2643d6271d0ffcd0888469")
         .then(res => res.json())
         .then((out) => {
-            console.log("API data:");
-            console.log(out);
             movieData = out;
             putMovieInHTML(movieData);
 

@@ -27,7 +27,6 @@ header > nav > ul > li > button{
     font-weight: bold;
     font-size: 1em;
     transition: 0.2s;
-    opacity: 0.9;
 
     vertical-align: middle;
 
@@ -64,7 +63,60 @@ li.currentPage, header > nav > ul > li > button:hover{
 .currentPage{
     background-color: #F15A24;
 }
+.currentPage:hover{
+    color:white;
+}
+.hidden{
+    display: none;
+}
 
 #container:only-child{
     background-color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    #container {
+        /*This is mainly used to check if responsiveness is activated.*/
+        /*background-color: blue;*/
+    }
+
+    header > nav > ul img {
+        display: none;
+    }
+
+    header > nav > ul {
+        display: inherit;
+    }
+
+    header ul > li {
+        display: block;
+    }
+
+    header > nav > ul > li {
+        line-height: 0;
+        text-align: center;
+    }
+
+    header > nav > ul > li > button {
+        width: 60%;
+        font-size: 3em;
+    }
+
+    header {
+        margin-bottom: 5%;
+    }
 }

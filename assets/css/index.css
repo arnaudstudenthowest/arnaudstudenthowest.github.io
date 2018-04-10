@@ -24,3 +24,18 @@ main{
     transition: 0.9s;
 }
 
+
+
+@media screen and (max-width: 768px) {
+    /* For mobile devices: */
+    header > nav > ul img{
+        display: none;
+    }
+    main{
+        width: 80%;
+    }
+    p{
+        font-size: 2em;
+    }
+
+}
