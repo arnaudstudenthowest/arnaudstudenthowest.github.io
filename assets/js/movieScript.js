@@ -1,3 +1,4 @@
+/*====================================================== INIT PHASE =============================================================*/
 "use strict";
 addEventListener("DOMContentLoaded", init);
 let movies = [];
@@ -27,14 +28,33 @@ function init() {
     }
     document.getElementById("searchFilter").addEventListener("submit",searchForSpecific);
     document.getElementById("reset").addEventListener("click",reset);
-
 }
-
-function reset() {
-    localStorage.clear();
-    location.reload();
+/*====================================================== REQUEST FUNCTIONS =============================================================*/
+function requestMovieInformation(e) {
+    saveState();
+    window.location = "movieInfo.html?id="+ this.id;
 }
-
+function searchForSpecific(e)
+{
+    e.preventDefault();
+    searchForChuckNorris = false;
+    let searchQuery= document.getElementById("searchByText").value.replace(/ +(?= )/g,'').trim().replace(/ /g,"+");
+    getMoviesFromAPI(1, searchQuery);
+    saveState();
+}
+function changeMoviePage(e){
+    let pageToLookup = parseInt(this.innerHTML);
+    if (searchForChuckNorris === true)
+    {
+        getMoviesFromAPI(pageToLookup,null);
+    }
+    else
+    {
+        let searchQuery= document.getElementById("searchByText").value.replace(/ +(?= )/g,'').trim().replace(/ /g,"+");
+        getMoviesFromAPI(pageToLookup, searchQuery);
+    }
+}
+/*==================================================== API FUNCTIONS ===============================================================*/
 function getMoviesFromAPI(pageToLookup, searchQuery)
 {
     let url;
@@ -62,37 +82,7 @@ function getMoviesFromAPI(pageToLookup, searchQuery)
             throw err
         });
 }
-
-
-
-function searchForSpecific(e)
-{
-    e.preventDefault();
-    searchForChuckNorris = false;
-    let searchQuery= document.getElementById("searchByText").value.replace(/ +(?= )/g,'').trim().replace(/ /g,"+");
-    getMoviesFromAPI(1, searchQuery);
-    saveState();
-
-}
-
-function changeMoviePage(e){
-    let pageToLookup = parseInt(this.innerHTML);
-    if (searchForChuckNorris === true)
-    {
-        getMoviesFromAPI(pageToLookup,null);
-    }
-    else
-    {
-        let searchQuery= document.getElementById("searchByText").value.replace(/ +(?= )/g,'').trim().replace(/ /g,"+");
-        getMoviesFromAPI(pageToLookup, searchQuery);
-    }
-}
-
-
-
-
-
-
+/*===================================================== INSERT INTO HTML FUNCTIONS ==============================================================*/
 function putMoviesInHTML(){
     let html = "";
     let width = 300;
@@ -101,13 +91,13 @@ function putMoviesInHTML(){
     {
         if (movies.results[i].poster_path === null)
         {
-            html += "<li class='movie' id='" + movies.results[i].id + "'><img src='assets/media/image_not_available.jpg'/><section class='movieInfo'><h2>"+ movies.results[i].title +"</h2><p>"+ movies.results[i].overview +"</p></section></li>";
+            html += "<li class='movie' id='" + movies.results[i].id + "'><img src='assets/media/image_not_available.jpg' alt='image not available poster'/><section class='movieInfo'><h2>"+ movies.results[i].title +"</h2><p>"+ movies.results[i].overview +"</p></section></li>";
         }
         else
         {
 
             let imageUrl = "https://image.tmdb.org/t/p/w" + width + movies.results[i].poster_path;
-            html += "<li class='movie' id='" + movies.results[i].id + "'><img src='"+ imageUrl +"'/><section class='movieInfo'><h2>"+ movies.results[i].title + "</h2><p>"+ movies.results[i].overview+"</p></section></li>";
+            html += "<li class='movie' id='" + movies.results[i].id + "'><img src='"+ imageUrl +"' alt='poster'/><section class='movieInfo'><h2>"+ movies.results[i].title + "</h2><p>"+ movies.results[i].overview+"</p></section></li>";
 
         }
 
@@ -118,19 +108,7 @@ function putMoviesInHTML(){
         document.getElementById(movies.results[i].id).addEventListener("click", requestMovieInformation);
     }
     setTimeout(scrollToTop, 500);
-
 }
-
-
-
-function requestMovieInformation(e) {
-    saveState();
-    window.location = "movieInfo.html?id="+ this.id;
-
-}
-
-
-
 function putPageButtonsInHTML()
 {
     let html = "";
@@ -168,28 +146,28 @@ function putPageButtonsInHTML()
     }
 
     document.getElementById("moviePages").innerHTML = html;
-
     for (let i=minPage; i<=maxPage; i++)
     {
         document.getElementById('moviePage'+i).addEventListener("click", changeMoviePage);
     }
 }
+/*====================================================== OTHER FUNCTIONS =============================================================*/
 
-function scrollToTop()
-{
-    document.querySelector('header').scrollIntoView({behavior:'smooth'});
-
-}
 
 function saveState()
 {
     lastSpecificSearch = document.getElementById("searchByText").value;
 
     localStorage.setItem("state", "saved");
-    localStorage.setItem("movies", movies);
-    localStorage.setItem("totalAmountOfPages", totalAmountOfPages);
     localStorage.setItem("currentPage", currentPage);
     localStorage.setItem("searchForChuckNorris", searchForChuckNorris);
     localStorage.setItem("lastSpecificSearch", lastSpecificSearch);
 }
-
+function reset() {
+    localStorage.clear();
+    location.reload();
+}
+function scrollToTop()
+{
+    document.querySelector('header').scrollIntoView({behavior:'smooth'});
+}

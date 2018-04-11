@@ -1,11 +1,31 @@
-.movie.unknown{
-    background-color:red;
+/*** MAIN SETTINGS ***/
+/*-- Includes: 'Title', 'Search option' and a listing of movies. --*/
+h1{
+    margin-left:40px;
+    font-size: 2em;
 }
-
-.movie > img{
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+/*** SEARCH FORM SETTINGS ***/
+/*-- Includes: 'label', 'input textfield', 'search button' and a 'reset button'. --*/
+#searchFilter{
+    font-size: 1.5em;
+    margin-left: 40px;
 }
+#reset{
+    max-width: 25px;
+    vertical-align: middle;
+}
+#reset:hover{
+    cursor: pointer;
+}
+/*** MOVIE LIST SETTINGS ***/
+/*-- Includes: a list of all movies --*/
+#movieList{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+/*** MOVIE SETTINGS ***/
+/*-- Includes: poster image, movie title and a movie overview --*/
 .movie{
     color:black;
     display: inline-block;
@@ -21,22 +41,9 @@
     cursor: pointer;
     color:black;
 }
-.movie:hover p{
-    color: black;
-    transition: 0.5s;
-}
-
-#movieList{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-.movieInfo > p{
-    font-size: 1em;
-    padding:10px;
-    color:lightgrey;
-
+.movie > img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 .movieInfo > h2{
     font-size: 1.5em;
@@ -44,16 +51,17 @@
     padding:10px;
     color:black;
 }
-
-#movieSection > h1{
-    margin-left:40px;
-    font-size: 2em;
+.movieInfo > p{
+    font-size: 1em;
+    padding:10px;
+    color:lightgrey;
 }
-#searchFilter{
-    font-size: 1.5em;
-    margin-left: 40px;
+.movie:hover p{
+    color: black;
+    transition: 0.5s;
 }
-
+/*** PAGE SETTINGS ***/
+/*-- Includes: buttons with page numbers at the bottom of the page. --*/
 #moviePages{
     display: flex;
     justify-content: center;
@@ -74,40 +82,19 @@
     transform: scale(1.1);
     transition: 0.4s;
 }
-
-#reset{
-    max-width: 25px;
-    vertical-align: middle;
-}
-#reset:hover{
-    cursor: pointer;
-}
-
-
 .currentMoviePage{
     background-color: #F15A24;
     color: white;
 }
-
-
-
-
-
+/*** RESPONSIVE SETTINGS ***/
+/*-- Includes: mobile devices (activated when screen width <= 1080px --*/
 @media screen and (max-width: 1080px)
 {
-    #movieList{
-        justify-content: center;
-    }
-    .movie{
-        width: 46%;
-        margin: 10px;
-    }
-    .movie > img{
-        width:100%;
-    }
-    #movieSection>h1{
+    /*** MAIN SETTINGS ***/
+    h1{
         display: none;
     }
+    /*** SEARCH FORM SETTINGS ***/
     #searchFilter {
         text-align: center;
         margin-bottom: 5%;
@@ -116,7 +103,6 @@
     #searchFilter > label{
         font-size: 2em;
         vertical-align: middle;
-
     }
     #searchByText{
         width:60%;
@@ -131,16 +117,16 @@
     #reset{
         max-width: 50px;
     }
-
+    /*** MOVIE LIST SETTINGS ***/
+    #movieList{
+        justify-content: center;
+    }
+    /*** MOVIE SETTINGS ***/
+    .movie{
+        width: 46%;
+        margin: 10px;
+    }
+    .movie > img{
+         width:100%;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-

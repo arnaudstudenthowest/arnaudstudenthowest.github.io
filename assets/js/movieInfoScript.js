@@ -1,12 +1,12 @@
+/*====================================================== INIT PHASE =============================================================*/
 "use strict";
-
 document.addEventListener("DOMContentLoaded", init());
 
 function init()
 {
     getMovieInfoFromAPI();
 }
-
+/*====================================================== INSERT INTO HTML FUNCTIONS =============================================================*/
 function putMovieInHTML(movieData)
 {
     let html = "";
@@ -23,7 +23,7 @@ function putMovieInHTML(movieData)
 
     html += "<button id='back'><i class='material-icons md-36'>keyboard_arrow_left</i>BACK</button>";
     html += "<section id='movieContent'>";
-    html += "<img id='poster' src='"+imageUrl+"'/>";
+    html += "<img id='poster' src='"+imageUrl+"' alt='poster'/>";
     html += "<section id='movieInfo'>";
     html += "<h1 id='title'>" + movieData.title + "</h1>";
     html += "<h2>Genre:</h2>";
@@ -44,18 +44,17 @@ function putMovieInHTML(movieData)
     html += "<h2>Summary:</h2>";
     html += "<p>"+ movieData.overview +"</p>";
     html += "<h2>Duration:</h2>";
-    html += "<p>"+ movieData.runtime +" minutes</p>"
+    html += "<p>"+ movieData.runtime +" minutes</p>";
     html += "<h2>Release date:</h2>";
-    html += "<p>"+ movieData.release_date +"</p>"
+    html += "<p>"+ movieData.release_date +"</p>";
     html += "<h2>Vote average:</h2>";
-    html += "<p>"+ movieData.vote_average +"/10</p>"
+    html += "<p>"+ movieData.vote_average +"/10</p>";
     html += "</section></section>";
-
 
     document.querySelector("main").innerHTML = html;
     document.getElementById("back").addEventListener("click", goBack);
 }
-
+/*==================================================== API FUNCTIONS ===============================================================*/
 function getMovieInfoFromAPI()
 {
     let query = window.location.search.substring(1);
@@ -78,9 +77,8 @@ function getMovieInfoFromAPI()
         .catch(err => {
             throw err
         });
-
 }
-
+/*==================================================== NAVIGATE FUNCTIONS ===============================================================*/
 function goBack()
 {
     window.location = "movies.html";

@@ -1,5 +1,5 @@
-
-
+/*** MAIN SETTINGS ***/
+/*-- Includes: a button 'Back' and a section 'movieContent' with information about the movie. --*/
 main{
     margin-left: auto;
     margin-right: auto;
@@ -8,23 +8,10 @@ main{
     width:80%;
     background-color: white;
     padding:1%;
-
 }
 #movieContent{
     display:flex;
 }
-
-#poster{
-    align-self: center;
-    width:30%;
-}
-#movieInfo{
-    padding-left:2%;
-}
-#genre > li{
-    display: inline;
-}
-
 #back{
     background-color: white;
     border: 3px solid black;
@@ -36,8 +23,6 @@ main{
     transition: 0.2s;
     vertical-align: middle;
     float:right;
-
-
 }
 #back:hover{
     cursor:pointer;
@@ -48,11 +33,17 @@ i{
     vertical-align: middle;
 }
 .material-icons.md-36 { font-size: 36px; }
-
-
-
-
-
+/*** MOVIECONTENT SECTION SETTINGS ***/
+/*-- Includes: a poster and a section 'movieInfo'. --*/
+#poster{
+    align-self: center;
+    width:30%;
+}
+#movieInfo{
+    padding-left:2%;
+}
+/*** MOVIEINFO SECTION SETTINGS ***/
+/*-- Includes: title and basic information about the movie.. --*/
 h1{
     font-size: 3em;
     font-weight: bold;
@@ -64,30 +55,32 @@ h2{
 p{
     font-size: 1em;
 }
+#genre > li{
+    display: inline;
+}
 
-
-
-
-
+/*** RESPONSIVE SETTINGS ***/
+/*-- Includes: mobile devices (activated when screen width <= 1080px --*/
 @media screen and (max-width: 1080px)
 {
+    /*** MAIN SETTINGS ***/
+    main{
+        width: 90%;
+    }
     #movieContent{
         flex-direction: column;
-    }
-    #poster{
-        width: 80%;
-        align-self: flex-start;
-        margin-bottom: 5%;
     }
     #back{
         width:30%;
         font-size: 2em;
     }
-    main{
-        width: 90%;
+    /*** MOVIECONTENT SECTION SETTINGS ***/
+    #poster{
+        width: 80%;
+        align-self: flex-start;
+        margin-bottom: 5%;
     }
-
-
+    /*** MOVIEINFO SECTION SETTINGS ***/
     h1{
         font-size: 3.5em;
         font-weight: bold;
@@ -102,6 +95,4 @@ p{
     #movieContent ul > li{
         font-size: 1.5em;
     }
-
-
 }

@@ -1,17 +1,13 @@
+/*** HEADER SETTINGS ***/
+/*-- Includes: 'JOKES'+'MOVIES'-buttons and A 'Punching Chuck' image. --*/
 header{
     margin-top:13%;
 }
 header > nav > ul img{
     width:auto;
 }
-p{
-    text-align: center;
-    font-weight: bold;
-}
-p > span{
-    font-size: 1.3em;
-}
-
+/*** MAIN SETTINGS ***/
+/*-- Includes: Box with a message from Chuck --*/
 main{
     margin-top: 60px;
     background-color: #F15A24;
@@ -20,22 +16,27 @@ main{
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-
     transition: 0.9s;
 }
-
-
-
+p{
+    text-align: center;
+    font-weight: bold;
+}
+p > span{
+    font-size: 1.3em;
+}
+/*** RESPONSIVE SETTINGS ***/
+/*-- Includes: mobile devices (activated when screen width <= 1080px --*/
 @media screen and (max-width: 1080px) {
-    /* For mobile devices: */
+    /*** HEADER SETTINGS ***/
     header > nav > ul img{
         display: none;
     }
+    /*** MAIN SETTINGS ***/
     main{
         width: 80%;
     }
     p{
         font-size: 2em;
     }
-
 }

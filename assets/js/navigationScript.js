@@ -1,5 +1,5 @@
+/*====================================================== INIT PHASE =============================================================*/
 "use strict";
-
 addEventListener("DOMContentLoaded", init);
 
 function init() {
@@ -7,6 +7,7 @@ function init() {
     document.getElementById("movies").addEventListener("click", linkToMoviesPage);
 }
 
+/*==================================================== NAVIGATE FUNCTIONS ===============================================================*/
 function linkToJokesPage() {
     window.location.replace("jokes.html");
 }
